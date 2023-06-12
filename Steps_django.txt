@@ -1,0 +1,51 @@
+--Pasos para trabajar en Django
+
+Paso Preliminar:
+
+Para ver todos los ambientes basta con colocar en la consola workon
+--------------------------------------------------------
+
+Primer paso 
+-Crear ambiente:
+
+mkvirtualenv nombre_del_ambiente
+en mi caso fue
+mkvirtualenv ambiente_red
+
+----------------------------------------------------------------------
+Segundo paso:
+
+-Cargar Ambiente
+workon nombre_del_ambiente
+
+---------------------------------------------------------------------
+Tercer paso: cargar la carpeta de trabajo (para ver las carpetas de trabajo, basta con dir)
+
+mi carpeta de trabajo en Django dentro de otra carpeta llamada Project VSC
+
+al dar cd (nombre de carpeta) llego a la que quiero que es django
+
+--------------------------------------------------------------------
+Cuarto Paso: Creando el proyecto en Django
+
+django-admin startproject site_django*(en site_django puede ir cualquier nombre) 
+
+Esto crea una carpeta llamada site_django con la estructura predefinida
+
+---------------------------------------------------------------
+Quinto Paso:Crear aplicación
+
+python manage.py startapp book
+
+Crea una carpeta book con la estructura inicial de una aplicación Django dentro del proyecto
+
+------------------------------------------------------
+Sexto Paso: Ejecutar servidor
+
+python manage.py runserver
+
+
+
+
+
+
