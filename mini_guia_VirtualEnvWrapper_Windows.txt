@@ -1,0 +1,45 @@
+# MINI GUÍA - Instalación y Uso de VirtualEnvWrapper para Windows
+
+1) Abrir ventana de CMD
+
+2) Verificar si tiene activa una instalación de Python. Para ello escriba en el CMD:  python --version
+	Debería mostrar algo similar, ejemplo:
+		C:\Users\cgarcia>python --version
+		Python 3.11.3
+
+	En caso de que no aparezca la versión de Python, debe reinstalarlo para corregir.
+
+3) Actualiza el gestor de paquetes PIP:  
+	Escriba en el CMD:  pip install --upgrade pip
+
+4) Para instalar el VirtualEnvWrapper, en el CMD escriba: pip install virtualenvwrapper-win
+
+5) Para probar si la instalación fue exitosa, en el CMD escriba: workon
+	Debe aparecer un mensaje como el siguiente:
+		
+		Pass a name to activate one of the following virtualenvs:
+		==============================================================================
+		No se encuentra el archivo
+		
+	(Esto último es porque no se ha creado ningún ambiente todavía)
+
+6) Para crear un ambiente virtual escriba:   mkvirtualenv nombre_del_ambiente
+	Ejemplo:
+		mkvirtualenv ambiente01
+		
+	Debe aparecer:
+		C:\Users\cgarcia>mkvirtualenv ambiente01
+			C:\Users\cgarcia\Envs is not a directory, creating
+			created virtual environment CPython3.11.3.final.0-64 in 3609ms
+			creator CPython3Windows(dest=C:\Users\cgarcia\Envs\ambiente01, clear=False, no_vcs_ignore=False, global=False)
+			seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\cgarcia\AppData\Local\pypa\virtualenv)
+			added seed packages: pip==23.1.2, setuptools==67.7.2, wheel==0.40.0
+			activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+		(ambiente01) C:\Users\cgarcia>
+	
+7) Para eliminar un ambiente virtual escriba:   rmvirtualenv nombre_del_ambiente
+
+8) Para cambiarse (activar) un ambiente existente escriba:   workon nombre_del_ambiente
+
+9) Para desactivar un ambiente (salir de él y regresar al entorno global) escriba:  deactivate
