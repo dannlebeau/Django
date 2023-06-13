@@ -1,0 +1,14 @@
+
+Para activar el panel de administración:
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+
+
+Ojo:
+
+1). El superusuario se crea solo 1 vez por proyecto
+2). Las Migraciones se realizan cada vez que se ajustan modelos o elementos de la BBDD.
+    Se recomienda hacerlo con frecuencia.
