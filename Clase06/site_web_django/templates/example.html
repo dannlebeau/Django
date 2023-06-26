@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Plantilla</title>
+</head>
+<body>
+    <p>{{ nombre.upper }} {{ apellido }}</p>
+
+
+    {% if login %}
+        {% for item in items %}
+            <li>{{item}}</li>
+        {% endfor %}
+    
+    {% else %}
+        <p>Usuario no logueado!!</p>
+    {% endif %}
+
+    <p>{{ items }}</p>
+</body>
+</html>
