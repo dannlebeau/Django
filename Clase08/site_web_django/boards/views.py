@@ -81,7 +81,7 @@ def registro_view(request):
             messages.success(request, "Registrado Satisfactoriamente.")
         return HttpResponseRedirect("/menu")
     
-    messages.error(request, "Registro invalido. Algunos datos ingresados no son correctos")
+        messages.error(request, "Registro invalido. Algunos datos ingresados no son correctos")
     form = RegistroUsuarioForm()
     context = { "register_form" : form }
     return render(request, "registro.html", context)
