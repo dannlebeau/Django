@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 #from ..boards.views import obtenerFecha
+#from .views import boardsforms_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("boards.urls")),
    # path("fecha/", obtenerFecha, name ="fecha")
+   #path('boardsform/', boardsforms_view, name='boardsform'),
 ]

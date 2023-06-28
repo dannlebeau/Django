@@ -11,7 +11,7 @@ urlpatterns =[
     path("mostrar/", mostrar, name ="mostrar"),
     path("datosform/", datosform_view, name ="datosform"),
     path("formmanual/", formmanual_view, name ="formmanual"),
-    path("boardsform/", boardsforms_view, name ="boardsform"),
+    path("boardsform/", boardsform_view, name ="boardsform"),
 
 ]
 

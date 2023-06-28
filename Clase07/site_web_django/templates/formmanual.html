@@ -1,7 +1,5 @@
-<html>
-    <head>
-    <link
-    rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
         <style>
             .i-am-centered {
             margin: auto;
@@ -9,28 +7,28 @@
             padding-top: 20%;
             }
         </style>
-    </head>
+</head>
     <body>
         <div class="i-am-centered">
             <form method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Nombres </label>
-                       {{ form.nombres }}
+                    {{ form.nombres }}
                 </div>
                 <div class="form-group">
                     <label>Apellidos </label>
-                     {{ form.apellidos }}
-                 </div>
-                <div class="form-group">
-                 <label>Prioridad</label>
-                     {{ form.prioridad }}
-                 </div>
-                 <div class="form-group">
-                <label>Contraseña:</label>
-                     {{ form.contrasenna }}
+                    {{ form.apellidos }}
                 </div>
-             <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="form-group">
+                    <label>Prioridad</label>
+                    {{ form.prioridad }}
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    {{ form.contrasenna }}
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </body>
