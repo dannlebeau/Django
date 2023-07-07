@@ -1,0 +1,22 @@
+<!--Se crea registro.html (Drilling Final, parte 4)-->
+{% extends 'base.html' %}
+{% block content %} 
+  {% load crispy_forms_tags %}
+
+<!--Registro-->
+<div id="vehiculo-register"> 
+  <div class="container py-5" id="title">
+      <h1>Registro</h1>
+      <form method="POST">
+         {% csrf_token %} 
+         {{ register_form |crispy }} 
+         <button class="btn btn-warning" type="submit" id="btn-submit">Registrar</button> 
+      </form> 
+      <p class="text-center" id="registro"> 
+        Si tienes actualmente una cuenta, inicie su sesión en 
+        <a href="/login">Login</a>
+      </p>
+  </div> 
+</div> 
+
+{% endblock %}

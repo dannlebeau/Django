@@ -1,0 +1,99 @@
+<!--Creación de base.html, con la estructura básica de "HTML"-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Título de Página-->
+    <title>Cátalogo en Línea</title>
+    <!--Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384- UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!--Fuente-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--CSS-->
+    {% load static %} <!--Carga la carpeta static-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!--Bootstrap 5-->
+    {% load bootstrap5 %}
+    <!--Bootstrap CSS-->
+    {% bootstrap_css %}  
+    <!--Bootstrap JSS-->   
+    {% bootstrap_javascript %}
+    <!--Bootstrap Messages-->
+    {% bootstrap_messages %}
+    <!--Icon-->
+    <link rel="icon" type="image/svg+xml" href="{% static 'img/auto.ico' %}">
+</head>
+<body id="body">
+    <section class="center-image">
+      <header>
+        {% block nav %}
+        {% include 'navbar.html' %}
+        {% endblock nav %}
+        </header>
+      <main class="container">
+          {% block content %}
+          {% endblock content %}
+      </main>
+    </section>
+    <br>
+    <!-- 
+    <section> 
+      <div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li class="ms-3"><a class="text-muted" href="https://www.fiat.cl/" target="black"><img class="bi" src="{% static 'img/fiat.png' %}" width="44" height="50"></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.chevrolet.cl/" target="black"><img class="bi" src="{% static 'img/chevrolet.png' %}" width="50" height="40"></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://www.ford.cl/" target="black"><img class="bi" src="{% static 'img/ford.png' %}" width="50" height="44"></a></li>
+          <li class="ms-3"><a class="text-muted" href="https://toyota.cl" target="black"><img class="bi" src="{% static 'img/toyota.png' %}" width="50" height="44"></a></li>
+        </ul>
+      </div>
+    </section>-->
+    <section>
+      <div class="brands-container">
+        <ul class="brands-list">
+          <!--Duplicado 1-->
+          <li class="brand-item"><a class="text-muted" href="https://www.fiat.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/fiat.png' %}" alt="Fiat"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://www.chevrolet.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/chevrolet.png' %}" alt="Chevrolet"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://www.ford.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/ford.png' %}" alt="Ford"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://toyota.cl" target="_blank"><img class="brand-logo" src="{% static 'img/toyota.png' %}" alt="Toyota"></a></li>
+          <!--Duplicado 2-->
+          <li class="brand-item"><a class="text-muted" href="https://www.fiat.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/fiat.png' %}" alt="Fiat"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://www.chevrolet.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/chevrolet.png' %}" alt="Chevrolet"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://www.ford.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/ford.png' %}" alt="Ford"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://toyota.cl" target="_blank"><img class="brand-logo" src="{% static 'img/toyota.png' %}" alt="Toyota"></a></li>
+          <!--Duplicado 3-->
+          <li class="brand-item"><a class="text-muted" href="https://www.fiat.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/fiat.png' %}" alt="Fiat"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://www.chevrolet.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/chevrolet.png' %}" alt="Chevrolet"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://www.ford.cl/" target="_blank"><img class="brand-logo" src="{% static 'img/ford.png' %}" alt="Ford"></a></li>
+          <li class="brand-item"><a class="text-muted" href="https://toyota.cl" target="_blank"><img class="brand-logo" src="{% static 'img/toyota.png' %}" alt="Toyota"></a></li>
+        </ul>
+      </div>
+    </section>
+    
+
+
+    <section>
+        <div class="footer-container">
+                <footer>
+                    <a class="" href="#">
+                        <img src="" alt="" class="logo_esquina">
+                    </a>
+                    <p id="text-footer">Elaborado por Dann LeBeau</p>
+                    <p id="text-footer">Todos los derechos reservados &copy; 2023</p>
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fab fa-facebook icon"></i></a></li>
+                      <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
+                      <li><a href="#"><i class="fab fa-instagram icon"></i></a></li>
+                      <li><a href="https://github.com/dannlebeau"><i class="fab fa-github icon"></i></a></li>
+                    </ul>
+                </footer>
+        </div>
+    </section>
+
+<!--JavaScript-->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+
