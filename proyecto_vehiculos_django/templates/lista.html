@@ -1,0 +1,57 @@
+<!--Creación de lista.html (Drilling Final, parte 4)-->
+<!--Se agrega herencia plantilla base.html-->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div  class="container py-5" id="vehiculo-list">
+    <div class="title py-3">
+      <h1>Listado de Vehículos</h1>
+    </div>
+  <div class="card" id="card-list"> 
+      <table class="table table-hover text-center table-responsive-sm" >
+      <thead>
+        <tr id="list-tabla">
+          <th>MARCA</th>
+          <th>MODELO</th>
+          <th>SERIAL CARROCERIA</th>
+          <th>SERIAL MOTOR</th>
+          <th>CATEGORIA</th>
+          <th>PRECIO</th>
+          <th>CONDICION DE PRECIOS</th>
+         </tr>
+      </thead>
+     {% if listas %}
+     {% for lista in listas %}
+      <tbody>
+        <tr>
+          <th>{{lista.marca}}</th>
+          <td>{{lista.modelo}}</td>
+          <td>{{lista.serial_carroceria}}</td>
+          <td>{{lista.serial_motor}}</td>
+          <td>{{lista.categoria}}</td>
+          <td>${{lista.precio}}.-</td>
+          <td class="precio {% if lista.precio > 30000 %}alto{% elif lista.precio > 10000 and lista.precio <= 30000 %}medio{% elif lista.precio <= 10000 %}bajo{% else %}raios{% endif %}"> 
+            <!--Se usa condicional para obtener Condición de Precios-->
+            {% if lista.precio > 30000 %}
+                Alto
+            {% elif lista.precio > 10000 and lista.precio <= 30000 %}
+               Medio
+            {% elif lista.precio <= 10000 %}
+               Bajo
+            {% else %}
+                raios, algo anda mal!
+            {% endif%}              
+          </td>
+          <td>></td>
+        </tr>
+      </tbody>
+      {% endfor%}
+      {% else %}
+      <h1>No existe lista</h1>
+      {% endif %}
+   </table>
+  </div>
+  
+</div> 
+{% endblock  %}
