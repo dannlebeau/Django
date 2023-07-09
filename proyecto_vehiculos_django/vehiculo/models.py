@@ -1,7 +1,29 @@
 from django.db import models
+from django.contrib.auth.models import User, Group, Permission #linea para permisos
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+@receiver(post_save, sender=User)
+def assign_visualizar_catalogo_permission(sender, instance, created, **kwargs):
+    if created:
+        # Verificar si el permiso ya existe
+        visualizar_perm = Permission.objects.filter(codename='visualizar_catalogo').first()
+        
+        # Crear el permiso solo si no existe
+        if not visualizar_perm:
+            visualizar_perm = Permission.objects.create(
+                codename='visualizar_catalogo',
+                name='Puede visualizar Catálogo de Vehículos',
+                content_type_id=9  # Reemplazar el ID de ContentType correspondiente a la app o modelo del Catálogo de Vehículos
+            )
+            
+        # Asignar el permiso al usuario
+        instance.user_permissions.add(visualizar_perm)
+
 
 # Create your models here.
-#Creación de Modelo Vehiculo (Drilling Final, parte 1)
+#Creación de Modelo Vehiculo 
 #Definicón de lista de opciones de marca
 vehiculo_marca = [
     ('Fiat', 'Fiat'),
@@ -28,7 +50,7 @@ class VehiculoModel(models.Model):
     creado= models.DateTimeField(auto_now_add=True)
     modificado= models.DateTimeField(auto_now=True)
     
-    #Se crea Class Meta para creación de permisos(Drilling Final, parte 4)
+    #Se crea Class Meta para creación de permisos
     class Meta:
               
         permissions = (
